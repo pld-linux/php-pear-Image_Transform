@@ -1,20 +1,19 @@
 %include	/usr/lib/rpm/macros.php
 %define		_class		Image
 %define		_subclass	Transform
-%define		_status		beta
-
+%define		_status		alpha
 %define		_pearname	%{_class}_%{_subclass}
+
 Summary:	%{_pearname} - standard interface to manipulate images using different libraries
 Summary(pl):	%{_pearname} - standardowy interfejs do manipulacji rysunkami przy u¿yciu ró¿nych bibliotek
 Name:		php-pear-%{_pearname}
-Version:	0.2
-Release:	3
+Version:	0.8
+Release:	1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
-# Source0-md5:	82bb777c0a3b74687d4604289cb82f56
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
+# Source0-md5:	12b7dd4ba5673a7d9d6a6726ab319c7d
 URL:		http://pear.php.net/package/Image_Transform/
-Patch0:		%{name}-cosmetic.patch
 BuildRequires:	rpm-php-pearprov >= 4.0.2-98
 Requires:	php-pear
 BuildArch:	noarch
@@ -54,7 +53,6 @@ Ta klasa ma w PEAR status: %{_status}.
 
 %prep
 %setup -q -c
-%patch0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -68,7 +66,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc %{_pearname}-%{version}/Examples/*
 %dir %{php_pear_dir}/%{_class}/%{_subclass}
 %dir %{php_pear_dir}/%{_class}/%{_subclass}/Driver
 %{php_pear_dir}/%{_class}/*.php

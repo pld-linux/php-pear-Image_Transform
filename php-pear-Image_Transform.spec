@@ -34,7 +34,7 @@ It provides :
  - Add border (soon),
  - Add shadow (soon).
 
-This class has in PEAR status: %{_status}
+This class has in PEAR status: %{_status}.
 
 %description -l pl
 Pakiet zosta³ zrobiony, aby zapewniæ prosty interfejs do ró¿nych
@@ -50,7 +50,7 @@ Dostarcza:
  - dodanie brzegów (wkrótce),
  - dodanie cienia (wkrótce).
 
-Ta klasa ma w PEAR status: %{_status}
+Ta klasa ma w PEAR status: %{_status}.
 
 %prep
 %setup -q -c

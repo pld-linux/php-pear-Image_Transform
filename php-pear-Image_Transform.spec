@@ -1,6 +1,8 @@
 %include	/usr/lib/rpm/macros.php
 %define		_class		Image
 %define		_subclass	Transform
+%define		_status		beta
+
 %define		_pearname	%{_class}_%{_subclass}
 Summary:	%{_pearname} - standard interface to manipulate images using different libraries
 Summary(pl):	%{_pearname} - standardowy interfejs do manipulacji rysunkami przy u¿yciu ró¿nych bibliotek
@@ -31,6 +33,8 @@ It provides :
  - Add border (soon),
  - Add shadow (soon).
 
+This class has in PEAR status: %{_status}
+
 %description -l pl
 Pakiet zosta³ zrobiony, aby zapewniæ prosty interfejs do ró¿nych
 bibliotek pozwalaj±cy na transformacje i manipulacje rysunkami.
@@ -44,6 +48,8 @@ Dostarcza:
  - obroty (ró¿ne k±ty),
  - dodanie brzegów (wkrótce),
  - dodanie cienia (wkrótce).
+
+Ta klasa ma w PEAR status: %{_status}
 
 %prep
 %setup -q -c

@@ -1,0 +1,12 @@
+diff -u -r php-pear-Image_Transform-0.2.org/Image_Transform-0.2/Driver/GD.php php-pear-Image_Transform-0.2/Image_Transform-0.2/Driver/GD.php
+--- php-pear-Image_Transform-0.2.org/Image_Transform-0.2/Driver/GD.php	Fri Oct 11 18:07:20 2002
++++ php-pear-Image_Transform-0.2/Image_Transform-0.2/Driver/GD.php	Fri Oct 11 18:08:00 2002
+@@ -168,7 +168,7 @@
+             if ($color[0]=='#'){
+                 $this->colorhex2colorarray( $color_mask );
+             } else {
+-                include_once('Image/Transform/Driver/ColorDefs.php');
++                include_once('Image/Transform/Driver/ColorsDefs.php');
+                 $color = isset($colornames[$color_mask])?$colornames[$color_mask]:false;
+             }
+         }

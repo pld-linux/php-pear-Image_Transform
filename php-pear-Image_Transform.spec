@@ -11,6 +11,7 @@ Version:	0.2
 Release:	3
 License:	PHP 2.02
 Group:		Development/Languages/PHP
+# Source0-md5:	82bb777c0a3b74687d4604289cb82f56
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 URL:		http://pear.php.net/
 Patch0:		%{name}-cosmetic.patch

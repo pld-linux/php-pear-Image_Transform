@@ -54,7 +54,7 @@ Ta klasa ma w PEAR status: %{_status}
 
 %prep
 %setup -q -c
-%patch0 -p1 
+%patch0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT

@@ -33,7 +33,7 @@ It provides :
  - Add border (soon),
  - Add shadow (soon).
 
-This class has in PEAR status: %{_status}.
+In PEAR status of this package is: %{_status}.
 
 %description -l pl
 Pakiet zosta³ zrobiony, aby zapewniæ prosty interfejs do ró¿nych

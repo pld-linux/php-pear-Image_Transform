@@ -8,13 +8,16 @@ Summary:	%{_pearname} - standard interface to manipulate images using different 
 Summary(pl):	%{_pearname} - standardowy interfejs do manipulacji rysunkami przy u¿yciu ró¿nych bibliotek
 Name:		php-pear-%{_pearname}
 Version:	0.8
-Release:	2
+Release:	2.1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 # Source0-md5:	12b7dd4ba5673a7d9d6a6726ab319c7d
+Patch0:		%{name}-IM-patches.patch
+Patch1:		http://kcet.de/GD.php.patch
 URL:		http://pear.php.net/package/Image_Transform/
 BuildRequires:	rpm-php-pearprov >= 4.0.2-98
+BuildRequires:	sed >= 4.0
 Requires:	php-pear
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -53,6 +56,12 @@ Ta klasa ma w PEAR status: %{_status}.
 
 %prep
 %setup -q -c
+cd %{_pearname}-%{version}
+find . -name '*.php' -print0 | xargs -0r sed -i -e 's,
+$,,'
+%patch0 -p2
+cd Driver
+%patch1 -p0
 
 %install
 rm -rf $RPM_BUILD_ROOT

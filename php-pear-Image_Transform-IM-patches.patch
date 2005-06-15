@@ -1,0 +1,56 @@
+--- php-pear-Image_Transform-0.2.org/Image_Transform-0.2/Driver/IM.php	Tue Jan  7 18:32:51 2003
++++ php-pear-Image_Transform-0.2/Image_Transform-0.2/Driver/IM.php	Tue Jan  7 18:32:13 2003
+@@ -176,6 +176,17 @@
+     }
+ 
+     /**
++     * Set profile
++     *
++     * @param string $profile
++     *
++     * @return none
++     */
++    function setProfile($profile) {
++        $this->command['profile'] = "+profile ". escapeshellarg($profile);
++    }
++
++    /**
+      * Save the image file
+      *
+      * @param $filename string  the name of the file to write to
+--- php-pear-Image_Transform-0.2/Image_Transform-0.2/Driver/IM.php~	Mon Sep  9 09:23:23 2002
++++ php-pear-Image_Transform-0.2/Image_Transform-0.2/Driver/IM.php	Tue Dec  3 23:36:39 2002
+@@ -139,6 +138,33 @@
+     } // End addText
+ 
+     /**
++     * Create border around image
++     *
++     * @param int $size
++     * @param string $color
++     *
++     * @return none
++     */
++	function addBorder($size = 1, $color = 'black') {
++		$this->command['zBorder'] = "-border ${size}x${size} -bordercolor $color";
++	}
++
++    /**
++     * Create thumbnail: resize and add border
++     *
++     * @param int $new_w
++     * @param int $new_h
++     * @param int $size
++     * @param string $color
++     *
++     * @return none
++     */
++	function thumbnail($new_w, $new_h, $size, $color) {
++		$this->resize($new_w, $new_h);
++		$this->addBorder($size, $color);
++	}
++
++    /**
+      * Adjust the image gamma
+      *
+      * @param float $outputgamma

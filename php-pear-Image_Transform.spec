@@ -8,7 +8,7 @@ Summary:	%{_pearname} - standard interface to manipulate images using different 
 Summary(pl):	%{_pearname} - standardowy interfejs do manipulacji rysunkami przy u¿yciu ró¿nych bibliotek
 Name:		php-pear-%{_pearname}
 Version:	0.8
-Release:	2.1
+Release:	2.2
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
@@ -16,7 +16,7 @@ Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 Patch0:		%{name}-IM-patches.patch
 Patch1:		http://kcet.de/GD.php.patch
 URL:		http://pear.php.net/package/Image_Transform/
-BuildRequires:	rpm-php-pearprov >= 4.0.2-98
+BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	sed >= 4.0
 Requires:	php-pear
 BuildArch:	noarch
@@ -55,26 +55,24 @@ Dostarcza:
 Ta klasa ma w PEAR status: %{_status}.
 
 %prep
-%setup -q -c
-cd %{_pearname}-%{version}
-find . -name '*.php' -print0 | xargs -0r sed -i -e 's,
-$,,'
+%pear_package_setup
+cd ./%{php_pear_dir}/%{_class}/%{_subclass}
 %patch0 -p2
 cd Driver
 %patch1 -p0
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/%{_subclass}/Driver
-
-install %{_pearname}-%{version}/%{_subclass}.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/
-install %{_pearname}-%{version}/Driver/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/%{_subclass}/Driver
+install -d $RPM_BUILD_ROOT%{php_pear_dir}
+%pear_package_install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc install.log
+%{php_pear_dir}/.registry/*.reg
 %dir %{php_pear_dir}/%{_class}/%{_subclass}
 %dir %{php_pear_dir}/%{_class}/%{_subclass}/Driver
 %{php_pear_dir}/%{_class}/*.php

@@ -16,8 +16,7 @@ Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 Patch0:		%{name}-IM-patches.patch
 Patch1:		http://kcet.de/GD.php.patch
 URL:		http://pear.php.net/package/Image_Transform/
-BuildRequires:	rpm-php-pearprov >= 4.4.2-11
-BuildRequires:	sed >= 4.0
+BuildRequires:	rpm-php-pearprov >= 4.4.2-12
 Requires:	php-pear
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)

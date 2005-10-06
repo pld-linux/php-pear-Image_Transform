@@ -7,14 +7,13 @@
 Summary:	%{_pearname} - standard interface to manipulate images using different libraries
 Summary(pl):	%{_pearname} - standardowy interfejs do manipulacji rysunkami przy u¿yciu ró¿nych bibliotek
 Name:		php-pear-%{_pearname}
-Version:	0.8
-Release:	3
+Version:	0.9.0
+Release:	1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	12b7dd4ba5673a7d9d6a6726ab319c7d
+# Source0-md5:	d72d28211e257bdb1b8e25adbbd0aeec
 Patch0:		%{name}-IM-patches.patch
-Patch1:		http://kcet.de/GD.php.patch
 URL:		http://pear.php.net/package/Image_Transform/
 BuildRequires:	rpm-php-pearprov >= 4.4.2-12
 Requires:	php-pear
@@ -57,8 +56,6 @@ Ta klasa ma w PEAR status: %{_status}.
 %pear_package_setup
 cd ./%{php_pear_dir}/%{_class}/%{_subclass}
 %patch0 -p2
-cd Driver
-%patch1 -p0
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -72,7 +69,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc install.log
 %{php_pear_dir}/.registry/*.reg
-%dir %{php_pear_dir}/%{_class}/%{_subclass}
-%dir %{php_pear_dir}/%{_class}/%{_subclass}/Driver
 %{php_pear_dir}/%{_class}/*.php
-%{php_pear_dir}/%{_class}/%{_subclass}/Driver/*.php
+%{php_pear_dir}/%{_class}/%{_subclass}

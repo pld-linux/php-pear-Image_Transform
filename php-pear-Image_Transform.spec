@@ -16,6 +16,7 @@ Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 Patch0:		%{name}-IM-patches.patch
 URL:		http://pear.php.net/package/Image_Transform/
 BuildRequires:	rpm-php-pearprov >= 4.4.2-12
+Requires:	php-common >= 3:4.3.0
 Requires:	php-pear
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -56,6 +57,11 @@ Ta klasa ma w PEAR status: %{_status}.
 %pear_package_setup
 cd ./%{php_pear_dir}/%{_class}/%{_subclass}
 %patch0 -p2
+
+# kill compat functions and up php version requirement to 4.3.0
+# besides, these files are not referenced from this package
+cd Driver
+rm -f image_type_to_mime_type.php IMAGETYPE.php
 
 %install
 rm -rf $RPM_BUILD_ROOT

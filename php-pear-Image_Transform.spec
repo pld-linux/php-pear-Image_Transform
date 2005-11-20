@@ -3,12 +3,11 @@
 %define		_subclass	Transform
 %define		_status		alpha
 %define		_pearname	%{_class}_%{_subclass}
-
 Summary:	%{_pearname} - standard interface to manipulate images using different libraries
 Summary(pl):	%{_pearname} - standardowy interfejs do manipulacji rysunkami przy u¿yciu ró¿nych bibliotek
 Name:		php-pear-%{_pearname}
 Version:	0.9.0
-Release:	1
+Release:	2
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz

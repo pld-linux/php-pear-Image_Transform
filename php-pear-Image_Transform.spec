@@ -16,6 +16,7 @@ Patch0:		%{name}-IM-patches.patch
 URL:		http://pear.php.net/package/Image_Transform/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-12
+BuildRequires:	rpmbuild(macros) >= 1.300
 Requires:	php-common >= 3:4.3.0
 Requires:	php-pear
 BuildArch:	noarch

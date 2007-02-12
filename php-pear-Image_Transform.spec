@@ -4,7 +4,7 @@
 %define		_status		alpha
 %define		_pearname	%{_class}_%{_subclass}
 Summary:	%{_pearname} - standard interface to manipulate images using different libraries
-Summary(pl):	%{_pearname} - standardowy interfejs do manipulacji rysunkami przy u¿yciu ró¿nych bibliotek
+Summary(pl.UTF-8):   %{_pearname} - standardowy interfejs do manipulacji rysunkami przy uÅ¼yciu rÃ³Å¼nych bibliotek
 Name:		php-pear-%{_pearname}
 Version:	0.9.0
 Release:	2
@@ -38,19 +38,19 @@ It provides :
 
 In PEAR status of this package is: %{_status}.
 
-%description -l pl
-Pakiet zosta³ zrobiony, aby zapewniæ prosty interfejs do ró¿nych
-bibliotek pozwalaj±cy na transformacje i manipulacje rysunkami.
+%description -l pl.UTF-8
+Pakiet zostaÅ‚ zrobiony, aby zapewniÄ‡ prosty interfejs do rÃ³Å¼nych
+bibliotek pozwalajÄ…cy na transformacje i manipulacje rysunkami.
 
 Dostarcza:
  - wsparcie dla GD, ImageMagick, Imagick oraz NetPBM,
- - funkcje zwi±zane z plikami,
+ - funkcje zwiÄ…zane z plikami,
  - addText,
- - skalowanie (do wielko¶ci, procentowe, maksymalne X/Y),
- - zmiana wielko¶ci,
- - obroty (ró¿ne k±ty),
- - dodanie brzegów (wkrótce),
- - dodanie cienia (wkrótce).
+ - skalowanie (do wielkoÅ›ci, procentowe, maksymalne X/Y),
+ - zmiana wielkoÅ›ci,
+ - obroty (rÃ³Å¼ne kÄ…ty),
+ - dodanie brzegÃ³w (wkrÃ³tce),
+ - dodanie cienia (wkrÃ³tce).
 
 Ta klasa ma w PEAR status: %{_status}.
 

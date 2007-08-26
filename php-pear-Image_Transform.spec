@@ -6,12 +6,12 @@
 Summary:	%{_pearname} - standard interface to manipulate images using different libraries
 Summary(pl.UTF-8):	%{_pearname} - standardowy interfejs do manipulacji rysunkami przy użyciu różnych bibliotek
 Name:		php-pear-%{_pearname}
-Version:	0.9.0
-Release:	2
+Version:	0.9.1
+Release:	1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	d72d28211e257bdb1b8e25adbbd0aeec
+# Source0-md5:	5ac09fb84c0b0ae2af5230b542bc34c4
 Patch0:		%{name}-IM-patches.patch
 URL:		http://pear.php.net/package/Image_Transform/
 BuildRequires:	php-pear-PEAR

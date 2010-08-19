@@ -6,12 +6,12 @@
 Summary:	%{_pearname} - standard interface to manipulate images using different libraries
 Summary(pl.UTF-8):	%{_pearname} - standardowy interfejs do manipulacji rysunkami przy użyciu różnych bibliotek
 Name:		php-pear-%{_pearname}
-Version:	0.9.1
-Release:	2
+Version:	0.9.3
+Release:	1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	5ac09fb84c0b0ae2af5230b542bc34c4
+# Source0-md5:	fb4137e17f0bcee03c1c488825735c46
 Patch0:		%{name}-IM-patches.patch
 URL:		http://pear.php.net/package/Image_Transform/
 BuildRequires:	php-pear-PEAR
@@ -58,23 +58,36 @@ Ta klasa ma w PEAR status: %{_status}.
 %pear_package_setup
 cd ./%{php_pear_dir}/%{_class}/%{_subclass}
 %patch0 -p2
+cd -
 
-# kill compat functions and up php version requirement to 4.3.0
-# besides, these files are not referenced from this package
-cd Driver
-rm -f image_type_to_mime_type.php IMAGETYPE.php
+install -d examples
+mv .%{php_pear_dir}/Examples/* examples
+mv .%{php_pear_dir}/data/Image_Transform/Examples/* examples
+mv .%{php_pear_dir}/data/Image_Transform/imgtests examples
+mv .%{php_pear_dir}/imgtests/* examples/imgtests
+
+mv .%{php_pear_dir}/data/Image_Transform/Docs/README .
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{php_pear_dir}
 %pear_package_install
 
+install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+cp -a examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+
+# don't care for tests
+rm -rf $RPM_BUILD_ROOT%{php_pear_dir}/tests/%{_pearname}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc README
 %doc install.log
 %{php_pear_dir}/.registry/*.reg
 %{php_pear_dir}/%{_class}/*.php
 %{php_pear_dir}/%{_class}/%{_subclass}
+
+%{_examplesdir}/%{name}-%{version}

@@ -1,17 +1,15 @@
-%include	/usr/lib/rpm/macros.php
-%define		_class		Image
-%define		_subclass	Transform
 %define		_status		alpha
-%define		_pearname	%{_class}_%{_subclass}
+%define		_pearname	Image_Transform
+%include	/usr/lib/rpm/macros.php
 Summary:	%{_pearname} - standard interface to manipulate images using different libraries
 Summary(pl.UTF-8):	%{_pearname} - standardowy interfejs do manipulacji rysunkami przy użyciu różnych bibliotek
 Name:		php-pear-%{_pearname}
-Version:	0.9.3
+Version:	0.9.4
 Release:	1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	fb4137e17f0bcee03c1c488825735c46
+# Source0-md5:	6ba53d6d57b05a93f406bd748f6d0f00
 Patch0:		%{name}-IM-patches.patch
 URL:		http://pear.php.net/package/Image_Transform/
 BuildRequires:	php-pear-PEAR
@@ -56,7 +54,7 @@ Ta klasa ma w PEAR status: %{_status}.
 
 %prep
 %pear_package_setup
-cd ./%{php_pear_dir}/%{_class}/%{_subclass}
+cd ./%{php_pear_dir}/Image/Transform
 %patch0 -p2
 cd -
 
@@ -84,7 +82,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc README
 %doc install.log
 %{php_pear_dir}/.registry/*.reg
-%{php_pear_dir}/%{_class}/*.php
-%{php_pear_dir}/%{_class}/%{_subclass}
+%{php_pear_dir}/Image/*.php
+%{php_pear_dir}/Image/Transform
 
 %{_examplesdir}/%{name}-%{version}

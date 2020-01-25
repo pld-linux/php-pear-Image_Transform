@@ -1,6 +1,5 @@
 %define		_status		alpha
 %define		_pearname	Image_Transform
-%include	/usr/lib/rpm/macros.php
 Summary:	%{_pearname} - standard interface to manipulate images using different libraries
 Summary(pl.UTF-8):	%{_pearname} - standardowy interfejs do manipulacji rysunkami przy użyciu różnych bibliotek
 Name:		php-pear-%{_pearname}

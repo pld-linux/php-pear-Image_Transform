@@ -54,7 +54,7 @@ Ta klasa ma w PEAR status: %{_status}.
 %prep
 %pear_package_setup
 cd ./%{php_pear_dir}/Image/Transform
-%patch0 -p2
+%patch -P0 -p2
 cd -
 
 install -d examples
